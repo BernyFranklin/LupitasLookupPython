@@ -28,10 +28,12 @@ for elem in birthdayList:
     # fetch name and birthday
     name = elem["name"]
     birthday = elem["birthday"]
-    # used to display all data in json file, delete "#" to print database
+   
+    # used to display all data in json file, delete "#" to print entire database
     # print("name = " + name)
     # print("birthday = " + birthday)
 
+    # sets name to associated birthday.
     birthdayDictionary[name] = birthday
 
 
@@ -43,7 +45,13 @@ for elem in birthdayList:
 print("Welcome to Lupita's Lookup...")
 # to get user input
 name = input("Enter a name of one of Lupita's friends: ")
+
+# If statement for valid name selection
+if name in birthdayDictionary:
+    print(name + "'s birthday is: " + birthdayDictionary[name])
+else:
+    print("Lupita doesn't have any friends with that name...")
 # GS's example print line
 # print("name = " + name)
-# Output after inputting valid name
-print(name + "'s birthday is: " + birthdayDictionary[name])
+
+
