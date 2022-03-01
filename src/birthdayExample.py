@@ -1,4 +1,4 @@
-# Gabriel Solomon, 2020
+# Frank Bernal, 2022
 
 import json
 
@@ -15,7 +15,7 @@ import json
 #
 
 # relative path
-pathToFile = "./birthday/birthday.json"
+pathToFile = "/Users/frankbernal/Documents/GitHub/LupitasLookupPython/src/birthday.json"
 
 
 # try to open a file and throw a error if it is not found
