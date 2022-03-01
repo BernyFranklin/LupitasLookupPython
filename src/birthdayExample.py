@@ -37,9 +37,9 @@ for elem in birthdayList:
     # fetch name and birthday
     name = elem["name"]
     birthday = elem["birthday"]
-
-    print("name = " + name)
-    print("birthday = " + birthday)
+    # used to display all data in json file
+    # print("name = " + name)
+    # print("birthday = " + birthday)
 
     birthdayDictionary[name] = birthday
 
@@ -49,4 +49,7 @@ print("Jocelyn Jones's birthday is: " + birthdayDictionary["Jocelyn Jones"])
 
 # to get user input
 name = input("Enter a name:")
-print("name = " + name)
+# GS's example print line
+# print("name = " + name)
+# Test output
+print(name + "'s birthday is: " + birthdayDictionary[name])
