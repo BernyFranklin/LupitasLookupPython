@@ -51,7 +51,5 @@ if name in birthdayDictionary:
     print(name + "'s birthday is: " + birthdayDictionary[name])
 else:
     print("Lupita doesn't have any friends with that name...")
-# GS's example print line
-# print("name = " + name)
 
 
