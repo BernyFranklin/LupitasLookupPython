@@ -1,20 +1,11 @@
-# Frank Bernal, 2022
+# Frank Bernal
+# Lupita's Lookup V1.0
+# CIS 024c Python Programming
+# 1 March 2022
 
 import json
 
-#
-# this is a relative path to the .json data file
-# you can also use a "full" or "absolute path" to the file
-# windows and mac paths are different.  You should google and youttube to learn about paths if you are
-# not familiar with them.  They are important fundamental computer concepts.
-#
-# this is a full windows path, note the forward slashes "/" used in python
-# pathToFile = "E:/Users/jerome/GitHub/evc-cit134a-python/birthday/birthday.json"
-#
-# mac (which is built on linux) and linux paths are like this: "a/b/c/d/e/f.json"
-#
-
-# relative path
+# relative path on Frank's device
 pathToFile = "/Users/frankbernal/Documents/GitHub/LupitasLookupPython/src/birthday.json"
 
 
@@ -37,7 +28,7 @@ for elem in birthdayList:
     # fetch name and birthday
     name = elem["name"]
     birthday = elem["birthday"]
-    # used to display all data in json file
+    # used to display all data in json file, delete "#" to print database
     # print("name = " + name)
     # print("birthday = " + birthday)
 
@@ -45,11 +36,14 @@ for elem in birthdayList:
 
 
 # to print a value in the dictionary by giving it a string with the name as the key
-print("Jocelyn Jones's birthday is: " + birthdayDictionary["Jocelyn Jones"])
+# the following print function was an example
+# print("Jocelyn Jones's birthday is: " + birthdayDictionary["Jocelyn Jones"])
 
+# Welcome the user
+print("Welcome to Lupita's Lookup...")
 # to get user input
-name = input("Enter a name:")
+name = input("Enter a name of one of Lupita's friends: ")
 # GS's example print line
 # print("name = " + name)
-# Test output
+# Output after inputting valid name
 print(name + "'s birthday is: " + birthdayDictionary[name])
