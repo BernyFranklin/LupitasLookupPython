@@ -75,7 +75,7 @@ for person in nameList:
 # if dictionaryList is empty
 if dictionarySearch == []:
     # print this
-    print("Sorry, your entry doesn't match any of Lupita's friends...")
+    print("Sorry, the entry \"" + nameFromUser + "\" doesn't match any of Lupita's friends...")
 # dictionarySearch now contains a list of valid *keys* to use for fetching data from birthdayDictionary
 
 # iterate through each name from dictionarySearch
