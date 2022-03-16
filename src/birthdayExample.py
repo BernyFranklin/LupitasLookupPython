@@ -33,6 +33,7 @@ nameList = []
 for elem in birthdayList:
 
     # fetch name and birthday
+    # .upper() used to make searching easier
     name = elem["name"].upper()
     birthday = elem["birthday"]
     # Append all names into a list for searching partial names
@@ -55,7 +56,7 @@ print("=============================")
 # ask to get user input
 nameFromUser = input("Enter a name of one of Lupita's friends: ")
 
-
+# message to let user know what was searched and the results
 print("==================================================")
 print("The following people contain the entry \"" + nameFromUser + "\"")
 print("==================================================")
@@ -66,6 +67,7 @@ dictionarySearch = []
 # iterate through each name in nameList that contains nameFromUser
 for person in nameList:
     # If we find a match it'll get appended to dictionarySearch
+    # names are converted to .upper() so we get an exact match
     if nameFromUser.upper() in person:
         dictionarySearch.append(person)
 
@@ -76,10 +78,13 @@ for person in nameList:
 if dictionarySearch == []:
     # print this
     print("Sorry, the entry \"" + nameFromUser + "\" doesn't match any of Lupita's friends...")
+
 # dictionarySearch now contains a list of valid *keys* to use for fetching data from birthdayDictionary
 
 # iterate through each name from dictionarySearch
 for person in dictionarySearch:
     # If the name from dictionarySearch is a valid *key* in birthdayDictionary it'll print the bdays
     if person in birthdayDictionary:
+        # Output takes the name and prints it with the first letters capitalized
+        # so we're not yelling at the user 
         print(person.title() + "'s birthday is: " + birthdayDictionary[person])
