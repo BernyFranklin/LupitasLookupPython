@@ -1,7 +1,11 @@
 # Frank Bernal
-# Lupita's Lookup V1.0
+# Lupita's Lookup V1.1
 # CIS 024c Python Programming
 # 1 March 2022
+
+"""
+Version 1.1 includes the advanced solution displayed in GS's example
+"""
 
 import json
 
@@ -22,34 +26,57 @@ birthdayList = json.load(jsonFile)
 # create an empty dictionary
 birthdayDictionary = {}
 
-# loop json list of data and put each name and birthday into a dictionary
+# created list to grab only names to use as *keys*
+nameList = []
+
+# loop json list of data and put each name and birthday into the dictionary
 for elem in birthdayList:
 
     # fetch name and birthday
-    name = elem["name"]
+    name = elem["name"].upper()
     birthday = elem["birthday"]
-   
+    # Append all names into a list for searching partial names
+    nameList.append(name)
+    
     # used to display all data in json file, delete "#" to print entire database
     # print("name = " + name)
     # print("birthday = " + birthday)
-
-    # sets name to associated birthday.
+    
+    # sets name *key* to associated birthday *value*.
     birthdayDictionary[name] = birthday
 
-
-# to print a value in the dictionary by giving it a string with the name as the key
-# the following print function was an example
-# print("Jocelyn Jones's birthday is: " + birthdayDictionary["Jocelyn Jones"])
+# nameList should now have a list of all names verbatum in the dictionary
 
 # Welcome the user
+print("=============================")
 print("Welcome to Lupita's Lookup...")
-# to get user input
-name = input("Enter a name of one of Lupita's friends: ")
+print("=============================")
 
-# If statement for valid name selection
-if name in birthdayDictionary:
-    print(name + "'s birthday is: " + birthdayDictionary[name])
-else:
-    print("Lupita doesn't have any friends with that name...")
+# ask to get user input
+nameFromUser = input("Enter a name of one of Lupita's friends: ")
 
 
+print("==================================================")
+print("The following people contain the entry \"" + nameFromUser + "\"")
+print("==================================================")
+
+# declared this list to gather valid matches from nameList to use as dictionary *keys*
+dictionarySearch = []
+
+# iterate through each name in nameList that contains nameFromUser
+for person in nameList:
+    # If we find a match it'll get appended to dictionarySearch
+    if nameFromUser.upper() in person:
+        dictionarySearch.append(person)
+
+# if dictionaryList is empty
+if dictionarySearch == []:
+    # print this
+    print("Sorry, your entry doesn't match any of Lupita's friends...")
+# dictionarySearch now contains a list of valid *keys* to use for fetching data from birthdayDictionary
+
+# iterate through each name from dictionarySearch
+for person in dictionarySearch:
+    # If the name from dictionarySearch is a valid *key* in birthdayDictionary it'll print the bdays
+    if person in birthdayDictionary:
+        print(person.title() + "'s birthday is: " + birthdayDictionary[name])
