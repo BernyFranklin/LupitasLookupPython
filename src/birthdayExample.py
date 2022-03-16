@@ -69,7 +69,9 @@ for person in nameList:
     if nameFromUser.upper() in person:
         dictionarySearch.append(person)
 
-print(dictionarySearch)
+# If you'd like to view what your list is, uncomment below
+#print(dictionarySearch)
+
 # if dictionaryList is empty
 if dictionarySearch == []:
     # print this
