@@ -69,6 +69,7 @@ for person in nameList:
     if nameFromUser.upper() in person:
         dictionarySearch.append(person)
 
+print(dictionarySearch)
 # if dictionaryList is empty
 if dictionarySearch == []:
     # print this
@@ -79,4 +80,4 @@ if dictionarySearch == []:
 for person in dictionarySearch:
     # If the name from dictionarySearch is a valid *key* in birthdayDictionary it'll print the bdays
     if person in birthdayDictionary:
-        print(person.title() + "'s birthday is: " + birthdayDictionary[name])
+        print(person.title() + "'s birthday is: " + birthdayDictionary[person])
